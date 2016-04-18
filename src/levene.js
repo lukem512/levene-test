@@ -21,7 +21,6 @@ var transform = module.exports.transform = function(samples) {
 };
 
 // Compute the W-value
-// Compute the F-value
 var test = module.exports.test = function(samples) {
 	var z = transform(samples);
 
