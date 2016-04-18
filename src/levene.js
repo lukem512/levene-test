@@ -6,13 +6,18 @@ var sm = require('statistical-methods');
 
 // Perform the Levene transformation.
 var transform = module.exports.transform = function(samples) {
+	var z = [];
+
 	samples.forEach(function(sample) {
 		var mu = sm.mean(sample);
-		var vals = [];
+		var zj = [];
 		sample.forEach(function(s) {
-			vals.push(Math.abs(mu - s));
+			z.push(Math.abs(mu - s));
 		});
+		z.push(zj);
 	});
+
+	return z;
 };
 
 // Compute the W-value

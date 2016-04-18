@@ -1,0 +1,32 @@
+{
+  "name": "levene-test",
+  "version": "0.0.1",
+  "description": "Perform Levene's statistical test for equality of group variances",
+  "main": "src/levene.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukem512/levene-test.git"
+  },
+  "keywords": [
+    "Levene",
+    "test",
+    "statistics",
+    "anova",
+    "analysis",
+    "variance",
+    "equlity",
+    "stats"
+  ],
+  "author": "Luke Mitchell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukem512/levene-test/issues"
+  },
+  "homepage": "https://github.com/lukem512/levene-test",
+  "dependencies": {
+    "statistical-methods": "^1.0.3"
+  }
+}
