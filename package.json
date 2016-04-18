@@ -1,6 +1,6 @@
 {
   "name": "levene-test",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Perform Levene's statistical test for equality of group variances",
   "main": "src/levene.js",
   "scripts": {
