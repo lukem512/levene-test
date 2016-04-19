@@ -4,15 +4,26 @@
 
 var sm = require('statistical-methods');
 
+var abs = function(mu, s) {
+	return Math.abs(mu - s);
+};
+
+var quad = function(mu, s) {
+	var delta = (mu - s);
+	return delta * delta;
+};
+
 // Perform the Levene transformation.
-var transform = module.exports.transform = function(samples) {
+var transform = module.exports.transform = function(samples, quadratic) {
 	var z = [];
+
+	var modifier = (quadratic) ? quad : abs;
 
 	samples.forEach(function(sample) {
 		var mu = sm.mean(sample);
 		var zj = [];
 		sample.forEach(function(s) {
-			zj.push(Math.abs(mu - s));
+			zj.push(modifier(mu, s));
 		});
 		z.push(zj);
 	});
@@ -21,8 +32,8 @@ var transform = module.exports.transform = function(samples) {
 };
 
 // Compute the W-value
-var test = module.exports.test = function(samples) {
-	var z = transform(samples);
+var test = module.exports.test = function(samples, quadratic) {
+	var z = transform(samples, quadratic);
 
 	// Compute N, the total number of observations
 	// and p, the number of samples
