@@ -17,3 +17,9 @@ To compute the W-test of an array of samples use the `test` function:
 
 	console.log(levene.test(samples));
 ```
+
+By default the test uses the absolute deviations from the group means. The quadratic (squared) deviations can also be used by specifying the `quadratic` parameter:
+
+```
+	console.log(levene.test(samples), true);
+```
