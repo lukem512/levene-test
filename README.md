@@ -6,20 +6,23 @@ An NPM module providing Levene's parametric statistical test. The test can be us
 
 To use it, simply install via NPM and include it in your project file.
 
-```
-	var levene = require('levene-test');
+```js
+var levene = require('levene-test');
 ```
 
 To compute the W-test of an array of samples use the `test` function:
 
-```
-	var samples = [[3,3,5,1], [1,2,3]];
-
-	console.log(levene.test(samples));
+```js
+var samples = [[3,3,5,1], [1,2,3]];
+console.log(levene.test(samples));
 ```
 
 By default the test uses the absolute deviations from the group means. The quadratic (squared) deviations can also be used by specifying the `quadratic` parameter:
 
+```js
+console.log(levene.test(samples), true);
 ```
-	console.log(levene.test(samples), true);
-```
+
+### License 
+
+MIT © Luke Mitchell
